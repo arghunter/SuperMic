@@ -1,0 +1,11 @@
+module 19-bitadder (
+    input  [18:0] a,  // 19-bit input a
+    input  [18:0] b,  // 19-bit input b
+    input         cin, // Carry in
+    output [18:0] sum, // 19-bit sum output
+    output        cout  // Carry out
+);
+
+    assign {cout, sum} = a + b + cin; // Add the inputs with the carry in
+
+endmodule
