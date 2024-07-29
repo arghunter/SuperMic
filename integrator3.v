@@ -1,7 +1,7 @@
 module integrator3 (
     input wire clk,       // Clock input
-    input wire [18:0] in,
-    input wire rst, // 19-bit input (output of integrator1)
+    input wire [18:0] in,// 19-bit input (output of integrato3)
+    input wire rst, 
     output reg [18:0] out // 19-bit output (increased by 1)
 );
     reg [18:0] reg_value = 0;
