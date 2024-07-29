@@ -6,7 +6,7 @@ module delay_line (
 	output wire [18:0] delayed_pcm_data
 );
 
-parameter MAX_DELAY = 64;
+parameter MAX_DELAY = 64; // Verilator will return "delayed assignment" error, one solution is to disable linting
 integer i, counter = 0;
 reg [18:0] buffer [MAX_DELAY:0];
 
@@ -14,15 +14,15 @@ always @(posedge clk or posedge rst) begin
 	if (rst) begin
 		counter <= 0;
 		for (i = 0; i <= MAX_DELAY; i = i + 1) begin
-			buffer[i] <= 19'b0;
+			buffer[i] <= 0;
 		end
 	end else begin
 		buffer[counter] <= pcm_data;
-		counter <= (counter + 1) % (delay + 1);
+		counter <= (counter + 1) % ({26'b0, delay} + 1);
 	end
 end
 
-assign delayed_pcm_data = buffer[(counter + 1) % (delay + 1)];
+assign delayed_pcm_data = buffer[(counter + 1) % ({26'b0, delay} + 1)];
 
 endmodule
 
