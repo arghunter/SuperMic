@@ -1,3 +1,4 @@
+`include "cic.v"
 module testbench;
 
 // Clock and reset signals
@@ -9,15 +10,15 @@ reg reset;
 reg input_signal;
 
 // Output signal (if any, replace 'output_signal' with the actual output of your DUT)
-wire output_signal;
+wire [18:0] output_signal;
 
 // Instantiate the DUT (Device Under Test)
-your_module_name dut (
+cic u_cic (
     .clk(clk),
     .lr_clk(lr_clk),
-    .reset(reset),
-    .input_signal(input_signal),
-    .output_signal(output_signal) // Adjust based on actual DUT ports
+    .i_reset(reset),
+    .i_data(input_signal),
+    .o_data(output_signal) // Adjust based on actual DUT ports
 );
 
 // Clock generation for clk (3.072 MHz)
@@ -31,7 +32,7 @@ initial begin
     lr_clk = 0;
     forever #10416.67 lr_clk = ~lr_clk; // Half period = 1 / (2 * 48 kHz) = 10416.67 ns
 end
-
+integer i;
 // Initial block for reset and input signal generation
 initial begin
     // Initialize reset
@@ -40,10 +41,10 @@ initial begin
     reset = 0;
 
     // Read input data from file and apply it to input_signal
-    $readmemb("pdm_sine_wave_1_binary.txt", input_data);
+    $readmemb("pdm_sine_wave_2_binary.txt", input_data);
 
-    integer i;
-    for (i = 0; i < $size(input_data); i = i + 1) begin
+    
+    for (i = 0; i < 262144; i = i + 1) begin
         input_signal = input_data[i];
         @(posedge clk); // Apply input at the rising edge of clk
     end
@@ -52,12 +53,12 @@ initial begin
     #1000;
     $finish;
 end
-
+integer infile, outfile, c;
 // Convert input data from -1 and 1 to 0 and 1
 initial begin
-    integer infile, outfile, c;
-    infile = $fopen("pdm_sine_wave_1.txt", "r");
-    outfile = $fopen("pdm_sine_wave_1_binary.txt", "w");
+    
+    infile = $fopen("pdm_sine_wave_2.txt", "r");
+    outfile = $fopen("pdm_sine_wave_2_binary.txt", "w");
     while (!$feof(infile)) begin
         c = $fgetc(infile);
         if (c == "-")
@@ -75,5 +76,35 @@ initial begin
 
 // Memory to store input data
 reg [0:0] input_data [0:262143]; // Adjust the size based on your input data length
+// integer outsigfile;
+// initial begin
+//     outsigfile = $fopen("output_changes.txt", "w");
+//     if (outsigfile == 0) begin
+//         $display("Failed to open file for writing");
+//         $finish;
+//     end
+// end
 
+// // Monitor output signal and log changes
+// always @(posedge clk) begin
+//     if ($time > 1000 && $time < $time + 162.76) begin // Skip logging during reset
+//         if (output_signal !== prev_output_signal) begin
+//             $fwrite(outsigfile, output_signal+"\n");
+//             prev_output_signal = output_signal;
+//         end
+//     end
+// end
+
+// // Variable to store previous output signal value
+// reg prev_output_signal;
+
+// initial begin
+//     prev_output_signal = 1'bx; // Initialize to an unknown value
+// end
+
+// // Close the file at the end of simulation
+// initial begin
+//     #100000; // Adjust the simulation end time as needed
+//     $fclose(outsigfile);
+// end
 endmodule
