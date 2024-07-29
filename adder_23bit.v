@@ -1,13 +1,13 @@
 // Full Adder Module
-module full_adder (
-    input a,
-    input b,
-    input cin,
-    output sum,
-    output cout
-);
-    assign {cout, sum} = a + b + cin;
-endmodule
+// module full_adder (
+//     input a,
+//     input b,
+//     input cin,
+//     output sum,
+//     output cout
+// );
+//     assign {cout, sum} = a + b + cin;
+// endmodule
 
 // 23-bit Adder Module
 module adder_23bit (
