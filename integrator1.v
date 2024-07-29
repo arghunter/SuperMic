@@ -1,8 +1,8 @@
 // integrator1.v
 module integrator1 (
     input wire clk,       // Clock input
-    input wire in,
-    input wire rst,        // 1-bit input
+    input wire in,// 1-bit input
+    input wire rst,        
     output reg [18:0] out // 19-bit output
 );
 
