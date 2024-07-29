@@ -1,9 +1,9 @@
 
 module top_module (
     input wire clk,       // Clock input
-    input wire in, 
-    input wire rst,       // 1-bit input for integrator1
-    output wire [18:0] out // 19-bit output of integrator2
+    input wire in, // 1-bit input 
+    input wire rst,       
+    output wire [18:0] out // 19-bit output of integrators
 );
 
     wire [18:0] integrator1_out; // Wire to connect the output of integrator1 to integrator2
