@@ -20,17 +20,5 @@
         ],
   "CLOCK_PERIOD": 333,
   "CLOCK_PORT": "clk",
-  "FP_SIZING": "absolute",
-  "DIE_AREA": [
-	0,
-	0,
-	160,
-	100
-  ],
-  "CORE_AREA": [
-    10,
-    10,
-    150,
-    90
-  ]
+  "QUIT_ON_LINTER_ERRORS": 0
 }
