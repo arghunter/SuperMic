@@ -1,4 +1,3 @@
-`include "cic.v"
 module testbench;
 
 // Clock and reset signals

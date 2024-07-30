@@ -1,6 +1,3 @@
-`include "integrator1.v"
-`include "integrator2.v"
-`include "integrator3.v"
 module top_module (
     input wire clk,       // Clock input
     input wire in, // 1-bit input 

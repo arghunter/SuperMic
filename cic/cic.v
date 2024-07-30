@@ -1,5 +1,3 @@
-`include "integrator_top_module.v"
-`include "comb.v"
 module cic (
     clk,
     lr_clk,

@@ -1,21 +1,36 @@
 {
-  "DESIGN_NAME": "top_ddr_to_sdr",
-  "VERILOG_FILES": ["dir::multi_ddr_to_sdr_dual.v", "dir::ddr_to_sdr_dual.v"],
-  "CLOCK_PERIOD": 25,
+  "DESIGN_NAME": "supermic_top_module",
+  "VERILOG_FILES": 
+	["dir::ddr2sdr/ddr_to_sdr_dual.v",
+         "dir::ddr2sdr/multi_ddr_to_sdr_dual.v",
+         "dir::adder/full_adder.v",
+         "dir::adder/adder_23bit.v",
+	 "dir::adder/adder_16x23bi.v",
+         "dir::cic/integrator1.v",
+	 "dir::cic/integrator2.v",
+	 "dir::cic/integrator3.v",
+	 "dir::cic/integrator_top_module.v",
+         "dir::cic/comb.v",
+ 	 "dir::cic/cic.v",
+	 "dir::delay/delay_line.v",
+ 	 "dir::delay/delay_module.v",
+	 "dir::i2s/mux_shift.v",
+	 "dir::i2s/i2s_bus.v",
+	 "dir::supermic_top_module.v"
+        ],
+  "CLOCK_PERIOD": 333,
   "CLOCK_PORT": "clk",
   "FP_SIZING": "absolute",
   "DIE_AREA": [
 	0,
 	0,
-	80,
-	80
+	160,
+	100
   ],
-  "CORE_AREA":[
+  "CORE_AREA": [
     10,
     10,
-    70,
-    70
-]
-
-
+    150,
+    90
+  ]
 }
