@@ -1,4 +1,4 @@
-`include "adder_23bit.v"
+
 module adder_16x23bit (
     input [18:0] in_0,
     input [18:0] in_1,
