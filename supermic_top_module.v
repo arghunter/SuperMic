@@ -103,7 +103,7 @@ module supermic_top_module(
             .clk(clk),
             .rst(rst),
             .lr_clk(lr_clk),
-            .bit_data(sum_out),
+            .bit_data({{9{sum_out[22]}}, sum_out}),
             .out(i2s_out)
         ); 
 
