@@ -41,7 +41,7 @@ module supermic_top_module(
         delay_module u_delay_module (
             .clk(clk),
             .rst(rst),
-            .delay_select(delay_select)
+            .delay_select(delay_select),
             .pcm_data_0(cic_data[0]),
             .pcm_data_1(cic_data[8]),
             .pcm_data_2(cic_data[1]),
