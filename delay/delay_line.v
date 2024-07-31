@@ -6,7 +6,7 @@ module delay_line (
 	output wire [18:0] delayed_pcm_data
 );
 
-parameter MAX_DELAY = 64; // Verilator will return "delayed assignment" error, one solution is to disable linting
+parameter MAX_DELAY = 64;
 integer i, counter = 0;
 reg [18:0] buffer [MAX_DELAY:0];
 
