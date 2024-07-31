@@ -60,7 +60,7 @@ module tb_delay_line;
 
   rst = 0;
   
-  delay_select <= 1;
+  delay_select <= 0;
       
   for (i = 0; i < 16; i = i + 1) begin
     cic_data[i] <= 0;

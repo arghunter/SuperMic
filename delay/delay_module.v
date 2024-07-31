@@ -38,7 +38,7 @@ module delay_module (
 
     wire [18:0] pcm_data [15:0];
     wire [18:0] delayed_pcm_data [15:0];
-    reg [31:0] mic_delays [15:0];  
+    reg [4:0] mic_delays [15:0];  
 
     integer x;
     initial begin
