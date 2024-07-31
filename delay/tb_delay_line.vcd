@@ -1,5 +1,5 @@
 $date
-	Wed Jul 31 18:40:28 2024
+	Wed Jul 31 18:59:59 2024
 $end
 $version
 	Icarus Verilog
@@ -56,7 +56,7 @@ $var wire 5 G delay [4:0] $end
 $var wire 19 H delayed_pcm_data [18:0] $end
 $var wire 19 I pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 J counter [31:0] $end
+$var reg 5 J counter [4:0] $end
 $var integer 32 K i [31:0] $end
 $upscope $end
 $upscope $end
@@ -67,7 +67,7 @@ $var wire 5 L delay [4:0] $end
 $var wire 19 M delayed_pcm_data [18:0] $end
 $var wire 19 N pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 O counter [31:0] $end
+$var reg 5 O counter [4:0] $end
 $var integer 32 P i [31:0] $end
 $upscope $end
 $upscope $end
@@ -78,7 +78,7 @@ $var wire 5 Q delay [4:0] $end
 $var wire 19 R delayed_pcm_data [18:0] $end
 $var wire 19 S pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 T counter [31:0] $end
+$var reg 5 T counter [4:0] $end
 $var integer 32 U i [31:0] $end
 $upscope $end
 $upscope $end
@@ -89,7 +89,7 @@ $var wire 5 V delay [4:0] $end
 $var wire 19 W delayed_pcm_data [18:0] $end
 $var wire 19 X pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 Y counter [31:0] $end
+$var reg 5 Y counter [4:0] $end
 $var integer 32 Z i [31:0] $end
 $upscope $end
 $upscope $end
@@ -100,7 +100,7 @@ $var wire 5 [ delay [4:0] $end
 $var wire 19 \ delayed_pcm_data [18:0] $end
 $var wire 19 ] pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 ^ counter [31:0] $end
+$var reg 5 ^ counter [4:0] $end
 $var integer 32 _ i [31:0] $end
 $upscope $end
 $upscope $end
@@ -111,7 +111,7 @@ $var wire 5 ` delay [4:0] $end
 $var wire 19 a delayed_pcm_data [18:0] $end
 $var wire 19 b pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 c counter [31:0] $end
+$var reg 5 c counter [4:0] $end
 $var integer 32 d i [31:0] $end
 $upscope $end
 $upscope $end
@@ -122,7 +122,7 @@ $var wire 5 e delay [4:0] $end
 $var wire 19 f delayed_pcm_data [18:0] $end
 $var wire 19 g pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 h counter [31:0] $end
+$var reg 5 h counter [4:0] $end
 $var integer 32 i i [31:0] $end
 $upscope $end
 $upscope $end
@@ -133,7 +133,7 @@ $var wire 5 j delay [4:0] $end
 $var wire 19 k delayed_pcm_data [18:0] $end
 $var wire 19 l pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 m counter [31:0] $end
+$var reg 5 m counter [4:0] $end
 $var integer 32 n i [31:0] $end
 $upscope $end
 $upscope $end
@@ -144,7 +144,7 @@ $var wire 5 o delay [4:0] $end
 $var wire 19 p delayed_pcm_data [18:0] $end
 $var wire 19 q pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 r counter [31:0] $end
+$var reg 5 r counter [4:0] $end
 $var integer 32 s i [31:0] $end
 $upscope $end
 $upscope $end
@@ -155,7 +155,7 @@ $var wire 5 t delay [4:0] $end
 $var wire 19 u delayed_pcm_data [18:0] $end
 $var wire 19 v pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 w counter [31:0] $end
+$var reg 5 w counter [4:0] $end
 $var integer 32 x i [31:0] $end
 $upscope $end
 $upscope $end
@@ -166,7 +166,7 @@ $var wire 5 y delay [4:0] $end
 $var wire 19 z delayed_pcm_data [18:0] $end
 $var wire 19 { pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 | counter [31:0] $end
+$var reg 5 | counter [4:0] $end
 $var integer 32 } i [31:0] $end
 $upscope $end
 $upscope $end
@@ -177,7 +177,7 @@ $var wire 5 ~ delay [4:0] $end
 $var wire 19 !" delayed_pcm_data [18:0] $end
 $var wire 19 "" pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 #" counter [31:0] $end
+$var reg 5 #" counter [4:0] $end
 $var integer 32 $" i [31:0] $end
 $upscope $end
 $upscope $end
@@ -188,7 +188,7 @@ $var wire 5 %" delay [4:0] $end
 $var wire 19 &" delayed_pcm_data [18:0] $end
 $var wire 19 '" pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 (" counter [31:0] $end
+$var reg 5 (" counter [4:0] $end
 $var integer 32 )" i [31:0] $end
 $upscope $end
 $upscope $end
@@ -199,7 +199,7 @@ $var wire 5 *" delay [4:0] $end
 $var wire 19 +" delayed_pcm_data [18:0] $end
 $var wire 19 ," pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 -" counter [31:0] $end
+$var reg 5 -" counter [4:0] $end
 $var integer 32 ." i [31:0] $end
 $upscope $end
 $upscope $end
@@ -210,7 +210,7 @@ $var wire 5 /" delay [4:0] $end
 $var wire 19 0" delayed_pcm_data [18:0] $end
 $var wire 19 1" pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 2" counter [31:0] $end
+$var reg 5 2" counter [4:0] $end
 $var integer 32 3" i [31:0] $end
 $upscope $end
 $upscope $end
@@ -221,7 +221,7 @@ $var wire 5 4" delay [4:0] $end
 $var wire 19 5" delayed_pcm_data [18:0] $end
 $var wire 19 6" pcm_data [18:0] $end
 $var wire 1 # rst $end
-$var integer 32 7" counter [31:0] $end
+$var reg 5 7" counter [4:0] $end
 $var integer 32 8" i [31:0] $end
 $upscope $end
 $upscope $end
