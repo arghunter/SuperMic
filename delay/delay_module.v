@@ -76,49 +76,585 @@ module delay_module (
 
     integer j;
 
-    always @(posedge clk or posedge rst) begin
-      begin
+    always @* begin
         case (delay_select)
-5'd0 : mic_delays <= '{6'd0,6'd4,6'd10,6'd12,6'd14,6'd18,6'd0,6'd0,6'd0,6'd0,6'd0,6'd4,6'd10,6'd12,6'd14,6'd18};
-5'd1 : mic_delays <= '{6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd3,6'd9,6'd15,6'd21,6'd24,6'd24,6'd24,6'd24,6'd24,6'd24};
-5'd2 : mic_delays <= '{6'd24,6'd24,6'd24,6'd24,6'd24,6'd24,6'd21,6'd15,6'd9,6'd3,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0};
-5'd3 : mic_delays <= '{6'd0,6'd2,6'd4,6'd6,6'd8,6'd10,6'd12,6'd14,6'd0,6'd2,6'd4,6'd6,6'd8,6'd10,6'd12,6'd14};
-5'd4 : mic_delays <= '{6'd0,6'd1,6'd4,6'd8,6'd10,6'd12,6'd14,6'd15,6'd17,6'd1,6'd5,6'd9,6'd11,6'd13,6'd16,6'd18};
-
-5'd5 : mic_delays <= '{6'd18,6'd14,6'd10,6'd8,6'd6,6'd4,6'd2,6'd0,6'd18,6'd14,6'd10,6'd8,6'd6,6'd4,6'd2,6'd0};
-5'd6 : mic_delays <= '{6'd24,6'd19,6'd21,6'd16,6'd18,6'd14,6'd16,6'd11,6'd13,6'd8,6'd10,6'd5,6'd7,6'd2,6'd4,6'd0};
-5'd7 : mic_delays <= '{6'd23,6'd21,6'd20,6'd18,6'd17,6'd15,6'd14,6'd12,6'd11,6'd9,6'd8,6'd6,6'd5,6'd3,6'd1,6'd0};
-5'd8 : mic_delays <= '{6'd0,6'd1,6'd4,6'd9,6'd14,6'd19,6'd24,6'd27,6'd28,6'd27,6'd24,6'd19,6'd14,6'd9,6'd4,6'd1};
-5'd9 : mic_delays <= '{6'd21,6'd21,6'd21,6'd21,6'd14,6'd14,6'd14,6'd14,6'd7,6'd7,6'd7,6'd7,6'd0,6'd0,6'd0,6'd0};
-
-5'd10 : mic_delays <= '{6'd0,6'd8,6'd6,6'd14,6'd20,6'd20,6'd28,6'd20,6'd20,6'd14,6'd6,6'd8,6'd0,6'd8,6'd6,6'd14};
-5'd11 : mic_delays <= '{6'd2,6'd7,6'd0,6'd12,6'd12,6'd17,6'd26,6'd21,6'd26,6'd16,6'd14,6'd11,6'd2,6'd7,6'd0,6'd12};
-5'd12 : mic_delays <= '{6'd9,6'd10,6'd0,6'd12,6'd7,6'd15,6'd23,6'd22,6'd31,6'd20,6'd24,6'd17,6'd9,6'd10,6'd0,6'd12};
-5'd13 : mic_delays <= '{6'd14,6'd10,6'd0,6'd10,6'd0,6'd10,6'd14,6'd18,6'd28,6'd18,6'd28,6'd18,6'd14,6'd10,6'd0,6'd10};
-5'd14 : mic_delays <= '{6'd22,6'd14,6'd7,6'd11,6'd0,6'd9,6'd8,6'd16,6'd24,6'd19,6'd31,6'd21,6'd22,6'd14,6'd7,6'd11};
-
-5'd15 : mic_delays <= '{6'd7,6'd0,6'd3,6'd11,6'd14,6'd4,6'd1,6'd1,6'd7,6'd13,6'd13,6'd10,6'd6,6'd4,6'd6,6'd8};
-5'd16 : mic_delays <= '{6'd4,6'd0,6'd6,6'd13,6'd12,6'd3,6'd2,6'd4,6'd10,6'd14,6'd12,6'd8,6'd4,6'd5,6'd8,6'd11};
-5'd17 : mic_delays <= '{6'd0,6'd0,6'd8,6'd12,6'd7,6'd1,6'd2,6'd6,6'd10,6'd11,6'd8,6'd4,6'd2,6'd5,6'd9,6'd10};
-5'd18 : mic_delays <= '{6'd0,6'd4,6'd11,6'd11,6'd4,6'd3,6'd6,6'd10,6'd11,6'd10,6'd6,6'd3,6'd3,6'd7,6'd11,6'd11};
-5'd19 : mic_delays <= '{6'd0,6'd7,6'd12,6'd8,6'd0,6'd4,6'd8,6'd11,6'd10,6'd6,6'd2,6'd1,6'd3,6'd7,6'd10,6'd9};
-
-5'd20 : mic_delays <= '{6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd1,6'd1,6'd1,6'd1,6'd1,6'd1,6'd1,6'd0,6'd70};
-5'd21 : mic_delays <= '{6'd0,6'd3,6'd3,6'd3,6'd3,6'd3,6'd3,6'd4,6'd4,6'd4,6'd4,6'd4,6'd4,6'd3,6'd3,6'd3};
-5'd22 : mic_delays <= '{6'd0,6'd5,6'd5,6'd5,6'd5,6'd6,6'd6,6'd6,6'd6,6'd6,6'd6,6'd6,6'd5,6'd5,6'd5,6'd5};
-5'd23 : mic_delays <= '{6'd0,6'd6,6'd6,6'd6,6'd6,6'd7,6'd7,6'd7,6'd7,6'd7,6'd6,6'd6,6'd6,6'd6,6'd5,6'd5};
-5'd24 : mic_delays <= '{6'd0,6'd5,6'd5,6'd5,6'd6,6'd6,6'd6,6'd6,6'd6,6'd5,6'd5,6'd5,6'd5,6'd4,6'd4,6'd4};
-
-5'd25 : mic_delays <= '{6'd8,6'd13,6'd18,6'd23,6'd5,6'd10,6'd15,6'd20,6'd2,6'd7,6'd12,6'd17,6'd0,6'd4,6'd9,6'd14};
-5'd26 : mic_delays <= '{6'd23,6'd18,6'd13,6'd8,6'd20,6'd17,6'd15,6'd26,6'd29,6'd31,6'd28,6'd33,6'd38,6'd15,6'd8,6'd0};
-5'd27 : mic_delays <= '{6'd23,6'd20,6'd17,6'd15,6'd18,6'd13,6'd8,6'd28,6'd33,6'd38,6'd26,6'd29,6'd31,6'd15,6'd8,6'd0};
-5'd28 : mic_delays <= '{6'd17,6'd17,6'd17,6'd17,6'd11,6'd6,6'd0,6'd23,6'd28,6'd34,6'd17,6'd17,6'd17,6'd11,6'd6,6'd0};
-5'd29 : mic_delays <= '{6'd15,6'd18,6'd21,6'd23,6'd10,6'd5,6'd0,6'd20,6'd25,6'd30,6'd12,6'd9,6'd7,6'd13,6'd11,6'd9};
-
-5'd30 : mic_delays <= '{6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0,6'd0};
-5'd31 : mic_delays <= '{6'd1,6'd2,6'd3,6'd4,6'd7,6'd11,6'd18,6'd29,6'd3,6'd4,6'd5,6'd6,6'd9,6'd13,6'd20,6'd31};	  
-	endcase
-      end
+	  0: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 4;
+                mic_delays[2] = 10;
+                mic_delays[3] = 12;
+                mic_delays[4] = 14;
+                mic_delays[5] = 18;
+                mic_delays[6] = 0;
+                mic_delays[7] = 0;
+                mic_delays[8] = 0;
+                mic_delays[9] = 0;
+                mic_delays[10] = 0;
+                mic_delays[11] = 4;
+                mic_delays[12] = 10;
+                mic_delays[13] = 12;
+                mic_delays[14] = 14;
+                mic_delays[15] = 18;
+            end
+            1: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 0;
+                mic_delays[4] = 0;
+                mic_delays[5] = 0;
+                mic_delays[6] = 3;
+                mic_delays[7] = 9;
+                mic_delays[8] = 15;
+                mic_delays[9] = 21;
+                mic_delays[10] = 24;
+                mic_delays[11] = 24;
+                mic_delays[12] = 24;
+                mic_delays[13] = 24;
+                mic_delays[14] = 24;
+                mic_delays[15] = 24;
+            end
+            2: begin
+                mic_delays[0] = 24;
+                mic_delays[1] = 24;
+                mic_delays[2] = 24;
+                mic_delays[3] = 24;
+                mic_delays[4] = 24;
+                mic_delays[5] = 24;
+                mic_delays[6] = 21;
+                mic_delays[7] = 15;
+                mic_delays[8] = 9;
+                mic_delays[9] = 3;
+                mic_delays[10] = 0;
+                mic_delays[11] = 0;
+                mic_delays[12] = 0;
+                mic_delays[13] = 0;
+                mic_delays[14] = 0;
+                mic_delays[15] = 0;
+            end
+            3: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 2;
+                mic_delays[2] = 4;
+                mic_delays[3] = 6;
+                mic_delays[4] = 8;
+                mic_delays[5] = 10;
+                mic_delays[6] = 12;
+                mic_delays[7] = 14;
+                mic_delays[8] = 0;
+                mic_delays[9] = 2;
+                mic_delays[10] = 4;
+                mic_delays[11] = 6;
+                mic_delays[12] = 8;
+                mic_delays[13] = 10;
+                mic_delays[14] = 12;
+                mic_delays[15] = 14;
+            end
+            4: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 4;
+                mic_delays[3] = 8;
+                mic_delays[4] = 10;
+                mic_delays[5] = 12;
+                mic_delays[6] = 14;
+                mic_delays[7] = 15;
+                mic_delays[8] = 17;
+                mic_delays[9] = 1;
+                mic_delays[10] = 5;
+                mic_delays[11] = 9;
+                mic_delays[12] = 11;
+                mic_delays[13] = 13;
+                mic_delays[14] = 16;
+                mic_delays[15] = 18;
+            end
+            5: begin
+                mic_delays[0] = 18;
+                mic_delays[1] = 14;
+                mic_delays[2] = 10;
+                mic_delays[3] = 8;
+                mic_delays[4] = 6;
+                mic_delays[5] = 4;
+                mic_delays[6] = 2;
+                mic_delays[7] = 0;
+                mic_delays[8] = 18;
+                mic_delays[9] = 14;
+                mic_delays[10] = 10;
+                mic_delays[11] = 8;
+                mic_delays[12] = 6;
+                mic_delays[13] = 4;
+                mic_delays[14] = 2;
+                mic_delays[15] = 0;
+            end
+            6: begin
+                mic_delays[0] = 24;
+                mic_delays[1] = 19;
+                mic_delays[2] = 21;
+                mic_delays[3] = 16;
+                mic_delays[4] = 18;
+                mic_delays[5] = 14;
+                mic_delays[6] = 16;
+                mic_delays[7] = 11;
+                mic_delays[8] = 13;
+                mic_delays[9] = 8;
+                mic_delays[10] = 10;
+                mic_delays[11] = 5;
+                mic_delays[12] = 7;
+                mic_delays[13] = 2;
+                mic_delays[14] = 4;
+                mic_delays[15] = 0;
+            end
+            7: begin
+                mic_delays[0] = 23;
+                mic_delays[1] = 21;
+                mic_delays[2] = 20;
+                mic_delays[3] = 18;
+                mic_delays[4] = 17;
+                mic_delays[5] = 15;
+                mic_delays[6] = 14;
+                mic_delays[7] = 12;
+                mic_delays[8] = 11;
+                mic_delays[9] = 9;
+                mic_delays[10] = 8;
+                mic_delays[11] = 6;
+                mic_delays[12] = 5;
+                mic_delays[13] = 3;
+                mic_delays[14] = 1;
+                mic_delays[15] = 0;
+            end
+            8: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 4;
+                mic_delays[3] = 9;
+                mic_delays[4] = 14;
+                mic_delays[5] = 19;
+                mic_delays[6] = 24;
+                mic_delays[7] = 27;
+                mic_delays[8] = 28;
+                mic_delays[9] = 27;
+                mic_delays[10] = 24;
+                mic_delays[11] = 19;
+                mic_delays[12] = 14;
+                mic_delays[13] = 9;
+                mic_delays[14] = 4;
+                mic_delays[15] = 1;
+            end
+            9: begin
+                mic_delays[0] = 21;
+                mic_delays[1] = 21;
+                mic_delays[2] = 21;
+                mic_delays[3] = 21;
+                mic_delays[4] = 14;
+                mic_delays[5] = 14;
+                mic_delays[6] = 14;
+                mic_delays[7] = 14;
+                mic_delays[8] = 7;
+                mic_delays[9] = 7;
+                mic_delays[10] = 7;
+                mic_delays[11] = 7;
+                mic_delays[12] = 0;
+                mic_delays[13] = 0;
+                mic_delays[14] = 0;
+                mic_delays[15] = 0;
+            end
+	    10: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 8;
+                mic_delays[2] = 6;
+                mic_delays[3] = 14;
+                mic_delays[4] = 20;
+                mic_delays[5] = 20;
+                mic_delays[6] = 28;
+                mic_delays[7] = 20;
+                mic_delays[8] = 20;
+                mic_delays[9] = 14;
+                mic_delays[10] = 6;
+                mic_delays[11] = 8;
+                mic_delays[12] = 0;
+                mic_delays[13] = 8;
+                mic_delays[14] = 6;
+                mic_delays[15] = 14;
+            end
+            11: begin
+                mic_delays[0] = 2;
+                mic_delays[1] = 7;
+                mic_delays[2] = 0;
+                mic_delays[3] = 12;
+                mic_delays[4] = 12;
+                mic_delays[5] = 17;
+                mic_delays[6] = 26;
+                mic_delays[7] = 21;
+                mic_delays[8] = 26;
+                mic_delays[9] = 16;
+                mic_delays[10] = 14;
+                mic_delays[11] = 11;
+                mic_delays[12] = 2;
+                mic_delays[13] = 7;
+                mic_delays[14] = 0;
+                mic_delays[15] = 12;
+            end
+            12: begin
+                mic_delays[0] = 9;
+                mic_delays[1] = 10;
+                mic_delays[2] = 0;
+                mic_delays[3] = 12;
+                mic_delays[4] = 7;
+                mic_delays[5] = 15;
+                mic_delays[6] = 23;
+                mic_delays[7] = 22;
+                mic_delays[8] = 31;
+                mic_delays[9] = 20;
+                mic_delays[10] = 24;
+                mic_delays[11] = 17;
+                mic_delays[12] = 9;
+                mic_delays[13] = 10;
+                mic_delays[14] = 0;
+                mic_delays[15] = 12;
+            end
+            13: begin
+                mic_delays[0] = 14;
+                mic_delays[1] = 10;
+                mic_delays[2] = 0;
+                mic_delays[3] = 10;
+                mic_delays[4] = 0;
+                mic_delays[5] = 10;
+                mic_delays[6] = 14;
+                mic_delays[7] = 18;
+                mic_delays[8] = 28;
+                mic_delays[9] = 18;
+                mic_delays[10] = 28;
+                mic_delays[11] = 18;
+                mic_delays[12] = 14;
+                mic_delays[13] = 10;
+                mic_delays[14] = 0;
+                mic_delays[15] = 10;
+            end
+            14: begin
+                mic_delays[0] = 22;
+                mic_delays[1] = 14;
+                mic_delays[2] = 7;
+                mic_delays[3] = 11;
+                mic_delays[4] = 0;
+                mic_delays[5] = 9;
+                mic_delays[6] = 8;
+                mic_delays[7] = 16;
+                mic_delays[8] = 24;
+                mic_delays[9] = 19;
+                mic_delays[10] = 31;
+                mic_delays[11] = 21;
+                mic_delays[12] = 22;
+                mic_delays[13] = 14;
+                mic_delays[14] = 7;
+                mic_delays[15] = 11;
+            end
+            15: begin
+                mic_delays[0] = 7;
+                mic_delays[1] = 0;
+                mic_delays[2] = 3;
+                mic_delays[3] = 11;
+                mic_delays[4] = 14;
+                mic_delays[5] = 4;
+                mic_delays[6] = 1;
+                mic_delays[7] = 1;
+                mic_delays[8] = 7;
+                mic_delays[9] = 13;
+                mic_delays[10] = 13;
+                mic_delays[11] = 10;
+                mic_delays[12] = 6;
+                mic_delays[13] = 4;
+                mic_delays[14] = 6;
+                mic_delays[15] = 8;
+            end
+            16: begin
+                mic_delays[0] = 4;
+                mic_delays[1] = 0;
+                mic_delays[2] = 6;
+                mic_delays[3] = 13;
+                mic_delays[4] = 12;
+                mic_delays[5] = 3;
+                mic_delays[6] = 2;
+                mic_delays[7] = 4;
+                mic_delays[8] = 10;
+                mic_delays[9] = 14;
+                mic_delays[10] = 12;
+                mic_delays[11] = 8;
+                mic_delays[12] = 4;
+                mic_delays[13] = 5;
+                mic_delays[14] = 8;
+                mic_delays[15] = 11;
+            end
+            17: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 8;
+                mic_delays[3] = 12;
+                mic_delays[4] = 7;
+                mic_delays[5] = 1;
+                mic_delays[6] = 2;
+                mic_delays[7] = 6;
+                mic_delays[8] = 10;
+                mic_delays[9] = 11;
+                mic_delays[10] = 8;
+                mic_delays[11] = 4;
+                mic_delays[12] = 2;
+                mic_delays[13] = 5;
+                mic_delays[14] = 9;
+                mic_delays[15] = 10;
+            end
+            18: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 4;
+                mic_delays[2] = 11;
+                mic_delays[3] = 11;
+                mic_delays[4] = 4;
+                mic_delays[5] = 3;
+                mic_delays[6] = 6;
+                mic_delays[7] = 10;
+                mic_delays[8] = 11;
+                mic_delays[9] = 10;
+                mic_delays[10] = 6;
+                mic_delays[11] = 3;
+                mic_delays[12] = 3;
+                mic_delays[13] = 7;
+                mic_delays[14] = 11;
+                mic_delays[15] = 11;
+            end
+            19: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 7;
+                mic_delays[2] = 12;
+                mic_delays[3] = 8;
+                mic_delays[4] = 0;
+                mic_delays[5] = 4;
+                mic_delays[6] = 8;
+                mic_delays[7] = 11;
+                mic_delays[8] = 10;
+                mic_delays[9] = 6;
+                mic_delays[10] = 2;
+                mic_delays[11] = 1;
+                mic_delays[12] = 3;
+                mic_delays[13] = 7;
+                mic_delays[14] = 10;
+                mic_delays[15] = 9;
+            end
+            20: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 0;
+                mic_delays[4] = 0;
+                mic_delays[5] = 0;
+                mic_delays[6] = 0;
+                mic_delays[7] = 1;
+                mic_delays[8] = 1;
+                mic_delays[9] = 1;
+                mic_delays[10] = 1;
+                mic_delays[11] = 1;
+                mic_delays[12] = 1;
+                mic_delays[13] = 1;
+                mic_delays[14] = 0;
+                mic_delays[15] = 70;
+            end
+            21: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 3;
+                mic_delays[2] = 3;
+                mic_delays[3] = 3;
+                mic_delays[4] = 3;
+                mic_delays[5] = 3;
+                mic_delays[6] = 3;
+                mic_delays[7] = 4;
+                mic_delays[8] = 4;
+                mic_delays[9] = 4;
+                mic_delays[10] = 4;
+                mic_delays[11] = 4;
+                mic_delays[12] = 4;
+                mic_delays[13] = 3;
+                mic_delays[14] = 3;
+                mic_delays[15] = 3;
+            end
+            22: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 5;
+                mic_delays[3] = 5;
+                mic_delays[4] = 5;
+                mic_delays[5] = 6;
+                mic_delays[6] = 6;
+                mic_delays[7] = 6;
+                mic_delays[8] = 6;
+                mic_delays[9] = 6;
+                mic_delays[10] = 6;
+                mic_delays[11] = 6;
+                mic_delays[12] = 5;
+                mic_delays[13] = 5;
+                mic_delays[14] = 5;
+                mic_delays[15] = 5;
+            end
+            23: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 6;
+                mic_delays[2] = 6;
+                mic_delays[3] = 6;
+                mic_delays[4] = 6;
+                mic_delays[5] = 7;
+                mic_delays[6] = 7;
+                mic_delays[7] = 7;
+                mic_delays[8] = 7;
+                mic_delays[9] = 7;
+                mic_delays[10] = 6;
+                mic_delays[11] = 6;
+                mic_delays[12] = 6;
+                mic_delays[13] = 6;
+                mic_delays[14] = 5;
+                mic_delays[15] = 5;
+            end
+            24: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 5;
+                mic_delays[3] = 5;
+                mic_delays[4] = 6;
+                mic_delays[5] = 6;
+                mic_delays[6] = 6;
+                mic_delays[7] = 6;
+                mic_delays[8] = 6;
+                mic_delays[9] = 5;
+                mic_delays[10] = 5;
+                mic_delays[11] = 5;
+                mic_delays[12] = 5;
+                mic_delays[13] = 4;
+                mic_delays[14] = 4;
+                mic_delays[15] = 4;
+            end
+            25: begin
+                mic_delays[0] = 8;
+                mic_delays[1] = 13;
+                mic_delays[2] = 18;
+                mic_delays[3] = 23;
+                mic_delays[4] = 5;
+                mic_delays[5] = 10;
+                mic_delays[6] = 15;
+                mic_delays[7] = 20;
+                mic_delays[8] = 2;
+                mic_delays[9] = 7;
+                mic_delays[10] = 12;
+                mic_delays[11] = 17;
+                mic_delays[12] = 0;
+                mic_delays[13] = 4;
+                mic_delays[14] = 9;
+                mic_delays[15] = 14;
+            end
+            26: begin
+                mic_delays[0] = 23;
+                mic_delays[1] = 18;
+                mic_delays[2] = 13;
+                mic_delays[3] = 8;
+                mic_delays[4] = 20;
+                mic_delays[5] = 17;
+                mic_delays[6] = 15;
+                mic_delays[7] = 26;
+                mic_delays[8] = 29;
+                mic_delays[9] = 31;
+                mic_delays[10] = 28;
+                mic_delays[11] = 33;
+                mic_delays[12] = 38;
+                mic_delays[13] = 15;
+                mic_delays[14] = 8;
+                mic_delays[15] = 0;
+            end
+            27: begin
+                mic_delays[0] = 23;
+                mic_delays[1] = 20;
+                mic_delays[2] = 17;
+                mic_delays[3] = 15;
+                mic_delays[4] = 18;
+                mic_delays[5] = 13;
+                mic_delays[6] = 8;
+                mic_delays[7] = 28;
+                mic_delays[8] = 33;
+                mic_delays[9] = 38;
+                mic_delays[10] = 26;
+                mic_delays[11] = 29;
+                mic_delays[12] = 31;
+                mic_delays[13] = 15;
+                mic_delays[14] = 8;
+                mic_delays[15] = 0;
+            end
+            28: begin
+                mic_delays[0] = 17;
+                mic_delays[1] = 17;
+                mic_delays[2] = 17;
+                mic_delays[3] = 17;
+                mic_delays[4] = 11;
+                mic_delays[5] = 6;
+                mic_delays[6] = 0;
+                mic_delays[7] = 23;
+                mic_delays[8] = 28;
+                mic_delays[9] = 34;
+                mic_delays[10] = 17;
+                mic_delays[11] = 17;
+                mic_delays[12] = 17;
+                mic_delays[13] = 11;
+                mic_delays[14] = 6;
+                mic_delays[15] = 0;
+            end
+            29: begin
+                mic_delays[0] = 15;
+                mic_delays[1] = 18;
+                mic_delays[2] = 21;
+                mic_delays[3] = 23;
+                mic_delays[4] = 10;
+                mic_delays[5] = 5;
+                mic_delays[6] = 0;
+                mic_delays[7] = 20;
+                mic_delays[8] = 25;
+                mic_delays[9] = 30;
+                mic_delays[10] = 12;
+                mic_delays[11] = 9;
+                mic_delays[12] = 7;
+                mic_delays[13] = 13;
+                mic_delays[14] = 11;
+                mic_delays[15] = 9;
+            end
+            30: begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 0;
+                mic_delays[4] = 0;
+                mic_delays[5] = 0;
+                mic_delays[6] = 0;
+                mic_delays[7] = 0;
+                mic_delays[8] = 0;
+                mic_delays[9] = 0;
+                mic_delays[10] = 0;
+                mic_delays[11] = 0;
+                mic_delays[12] = 0;
+                mic_delays[13] = 0;
+                mic_delays[14] = 0;
+                mic_delays[15] = 0;
+            end
+            31: begin
+                mic_delays[0] = 1;
+                mic_delays[1] = 2;
+                mic_delays[2] = 3;
+                mic_delays[3] = 4;
+                mic_delays[4] = 7;
+                mic_delays[5] = 11;
+                mic_delays[6] = 18;
+                mic_delays[7] = 29;
+                mic_delays[8] = 3;
+                mic_delays[9] = 4;
+                mic_delays[10] = 5;
+                mic_delays[11] = 6;
+                mic_delays[12] = 9;
+                mic_delays[13] = 13;
+                mic_delays[14] = 20;
+                mic_delays[15] = 31;
+            end
+        endcase
     end
 
     genvar i;
