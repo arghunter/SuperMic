@@ -22,7 +22,7 @@ module delay_module (
 
     wire [18:0] pcm_data [7:0];
     wire [18:0] delayed_pcm_data [7:0];
-    reg [4:0] mic_delays [7:0];  
+    reg [3:0] mic_delays [7:0];  
 
 
     integer x;
@@ -83,17 +83,7 @@ module delay_module (
                 mic_delays[6] = 8;
                 mic_delays[7] = 9;
             end
-          3 : begin
-                mic_delays[0] = 3;
-                mic_delays[1] = 4;
-                mic_delays[2] = 5;
-                mic_delays[3] = 6;
-                mic_delays[4] = 7;
-                mic_delays[5] = 8;
-                mic_delays[6] = 9;
-                mic_delays[7] = 10;
-            end
-
+          
     endcase
     end
 
