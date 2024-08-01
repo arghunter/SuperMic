@@ -22,7 +22,7 @@ module delay_module (
 
     wire [18:0] pcm_data [7:0];
     wire [18:0] delayed_pcm_data [7:0];
-    reg [3:0] mic_delays [7:0];  
+    reg [4:0] mic_delays [7:0];  
 
     integer x;
     initial begin
@@ -51,47 +51,149 @@ module delay_module (
 
     always @(delay_select) begin
         case (delay_select)
-	  0 : begin
+	  30 : begin
                 mic_delays[0] = 0;
-                mic_delays[1] = 4;
-                mic_delays[2] = 10;
-                mic_delays[3] = 12;
-                mic_delays[4] = 14;
-                mic_delays[5] = 18;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 0;
+                mic_delays[4] = 0;
+                mic_delays[5] = 0;
                 mic_delays[6] = 0;
                 mic_delays[7] = 0;
             end
+          31 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 2;
+                mic_delays[2] = 4;
+                mic_delays[3] = 6;
+                mic_delays[4] = 8;
+                mic_delays[5] = 10;
+                mic_delays[6] = 12;
+                mic_delays[7] = 14;
+            end
+          0 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 4;
+                mic_delays[3] = 4;
+                mic_delays[4] = 8;
+                mic_delays[5] = 8;
+                mic_delays[6] = 12;
+                mic_delays[7] = 12;
+            end
+
+          5 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 6;
+                mic_delays[4] = 6;
+                mic_delays[5] = 10;
+                mic_delays[6] = 10;
+                mic_delays[7] = 10;
+              end
+		  10 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 3;
+                mic_delays[2] = 3;
+                mic_delays[3] = 7;
+                mic_delays[4] = 7;
+                mic_delays[5] = 10;
+                mic_delays[6] = 10;
+                mic_delays[7] = 14;
+              end
+		  15 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 1;
+                mic_delays[3] = 3;
+                mic_delays[4] = 4;
+                mic_delays[5] = 7;
+                mic_delays[6] = 11;
+                mic_delays[7] = 14;
+              end
+	      20 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 0;
+                mic_delays[4] = 1;
+                mic_delays[5] = 1;
+                mic_delays[6] = 1;
+                mic_delays[7] = 1;
+              end
+          25 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 0;
+                mic_delays[3] = 0;
+                mic_delays[4] = 6;
+                mic_delays[5] = 6;
+                mic_delays[6] = 6;
+                mic_delays[7] = 6;
+              end
           1 : begin
-                mic_delays[0] = 1;
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 4;
+                mic_delays[3] = 4;
+                mic_delays[4] = 10;
+                mic_delays[5] = 10;
+                mic_delays[6] = 12;
+                mic_delays[7] = 12;
+              end
+		  6 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 3;
+                mic_delays[2] = 6;
+                mic_delays[3] = 6;
+                mic_delays[4] = 8;
+                mic_delays[5] = 9;
+                mic_delays[6] = 11;
+                mic_delays[7] = 14;
+              end
+		  11 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 3;
+                mic_delays[3] = 5;
+                mic_delays[4] = 7;
+                mic_delays[5] = 10;
+                mic_delays[6] = 11;
+                mic_delays[7] = 12;
+              end
+		  16 : begin
+                mic_delays[0] = 0;
                 mic_delays[1] = 2;
                 mic_delays[2] = 3;
                 mic_delays[3] = 4;
-                mic_delays[4] = 5;
+                mic_delays[4] = 4;
                 mic_delays[5] = 6;
-                mic_delays[6] = 7;
-                mic_delays[7] = 8;
-            end
-          2 : begin
-                mic_delays[0] = 2;
+                mic_delays[6] = 12;
+                mic_delays[7] = 13;
+              end
+		  21 : begin
+                mic_delays[0] = 0;
                 mic_delays[1] = 3;
-                mic_delays[2] = 4;
-                mic_delays[3] = 5;
-                mic_delays[4] = 6;
-                mic_delays[5] = 7;
-                mic_delays[6] = 8;
-                mic_delays[7] = 9;
-            end
-
-          3 : begin
-                mic_delays[0] = 3;
-                mic_delays[1] = 4;
+                mic_delays[2] = 3;
+                mic_delays[3] = 3;
+                mic_delays[4] = 3;
+                mic_delays[5] = 4;
+                mic_delays[6] = 4;
+                mic_delays[7] = 4;
+              end
+		  26 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 3;
                 mic_delays[2] = 5;
-                mic_delays[3] = 6;
+                mic_delays[3] = 5;
                 mic_delays[4] = 7;
                 mic_delays[5] = 8;
-                mic_delays[6] = 9;
-                mic_delays[7] = 10;
+                mic_delays[6] = 10;
+                mic_delays[7] = 13;
               end
+
+
 
     endcase
     end
