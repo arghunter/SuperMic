@@ -9,20 +9,20 @@ module adder_16x23bit (
     input [18:0] in_6,
     input [18:0] in_7,
     input [18:0] in_8,
-    output [22:0] sum,
+    output [21:0] sum,
     output carry_out
 );
 
-    wire [22:0] in_0_ext = {{4{in_0[18]}}, in_0};
-    wire [22:0] in_1_ext = {{4{in_1[18]}}, in_1};
-    wire [22:0] in_2_ext = {{4{in_2[18]}}, in_2};
-    wire [22:0] in_3_ext = {{4{in_3[18]}}, in_3};
-    wire [22:0] in_4_ext = {{4{in_4[18]}}, in_4};
-    wire [22:0] in_5_ext = {{4{in_5[18]}}, in_5};
-    wire [22:0] in_6_ext = {{4{in_6[18]}}, in_6};
-    wire [22:0] in_7_ext = {{4{in_7[18]}}, in_7};
+    wire [21:0] in_0_ext = {{4{in_0[18]}}, in_0};
+    wire [21:0] in_1_ext = {{4{in_1[18]}}, in_1};
+    wire [21:0] in_2_ext = {{4{in_2[18]}}, in_2};
+    wire [21:0] in_3_ext = {{4{in_3[18]}}, in_3};
+    wire [21:0] in_4_ext = {{4{in_4[18]}}, in_4};
+    wire [21:0] in_5_ext = {{4{in_5[18]}}, in_5};
+    wire [21:0] in_6_ext = {{4{in_6[18]}}, in_6};
+    wire [21:0] in_7_ext = {{4{in_7[18]}}, in_7};
 
-    wire [22:0] sum_intermediate [12:0];
+    wire [21:0] sum_intermediate [12:0];
     wire [12:0] carry_out_intermediate;
 
     // Stage 1: Add pairs of inputs
