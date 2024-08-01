@@ -11,7 +11,7 @@ module supermic_top_module(
     wire [18:0] cic_data [7:0];
     wire [18:0] delayed_data [7:0];
     wire carry;
-    wire [22:0] sum_out;
+    wire [21:0] sum_out;
 
     genvar i;
     generate
@@ -79,12 +79,13 @@ module supermic_top_module(
             .clk(clk),
             .rst(rst),
             .lr_clk(lr_clk),
-            .bit_data({{9{sum_out[22]}}, sum_out}),
+            .bit_data({{10{sum_out[21]}}, sum_out}),
             .out(i2s_out)
         ); 
 
     endgenerate
 
 assign mic_clk = lr_clk;
+
 
 endmodule
