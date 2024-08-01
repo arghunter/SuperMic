@@ -192,6 +192,186 @@ module delay_module (
                 mic_delays[6] = 10;
                 mic_delays[7] = 13;
               end
+		  2 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 2;
+                mic_delays[3] = 4;
+                mic_delays[4] = 5;
+                mic_delays[5] = 5;
+                mic_delays[6] = 5;
+                mic_delays[7] = 6;
+              end
+		  7 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 5;
+                mic_delays[3] = 6;
+                mic_delays[4] = 10;
+                mic_delays[5] = 10;
+                mic_delays[6] = 10;
+                mic_delays[7] = 15;
+              end
+		  12 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 2;
+                mic_delays[2] = 3;
+                mic_delays[3] = 5;
+                mic_delays[4] = 8;
+                mic_delays[5] = 10;
+                mic_delays[6] = 11;
+                mic_delays[7] = 13;
+              end
+		  17 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 1;
+                mic_delays[3] = 2;
+                mic_delays[4] = 6;
+                mic_delays[5] = 7;
+                mic_delays[6] = 8;
+                mic_delays[7] = 12;
+              end
+		  22 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 5;
+                mic_delays[3] = 5;
+                mic_delays[4] = 5;
+                mic_delays[5] = 6;
+                mic_delays[6] = 6;
+                mic_delays[7] = 6;
+              end
+		  27 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 2;
+                mic_delays[2] = 4;
+                mic_delays[3] = 5;
+                mic_delays[4] = 7;
+                mic_delays[5] = 8;
+                mic_delays[6] = 10;
+                mic_delays[7] = 13;
+              end
+		  3 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 1;
+                mic_delays[3] = 2;
+                mic_delays[4] = 3;
+                mic_delays[5] = 4;
+                mic_delays[6] = 5;
+                mic_delays[7] = 6;
+              end
+		  8 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 3;
+                mic_delays[3] = 5;
+                mic_delays[4] = 5;
+                mic_delays[5] = 8;
+                mic_delays[6] = 11;
+                mic_delays[7] = 11;
+              end
+		  13 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 4;
+                mic_delays[2] = 4;
+                mic_delays[3] = 7;
+                mic_delays[4] = 7;
+                mic_delays[5] = 10;
+                mic_delays[6] = 10;
+                mic_delays[7] = 14;
+              end
+		  18 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 3;
+                mic_delays[2] = 4;
+                mic_delays[3] = 4;
+                mic_delays[4] = 5;
+                mic_delays[5] = 10;
+                mic_delays[6] = 11;
+                mic_delays[7] = 11;
+              end
+		  23 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 6;
+                mic_delays[3] = 6;
+                mic_delays[4] = 6;
+                mic_delays[5] = 6;
+                mic_delays[6] = 7;
+                mic_delays[7] = 7;
+              end
+		  28 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 7;
+                mic_delays[3] = 7;
+                mic_delays[4] = 9;
+                mic_delays[5] = 10;
+                mic_delays[6] = 12;
+                mic_delays[7] = 15;
+              end
+		  4 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 1;
+                mic_delays[2] = 2;
+                mic_delays[3] = 4;
+                mic_delays[4] = 7;
+                mic_delays[5] = 8;
+                mic_delays[6] = 9;
+                mic_delays[7] = 11;
+              end
+		  9 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 5;
+                mic_delays[2] = 5;
+                mic_delays[3] = 5;
+                mic_delays[4] = 10;
+                mic_delays[5] = 10;
+                mic_delays[6] = 10;
+                mic_delays[7] = 15;
+              end
+		  14 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 2;
+                mic_delays[2] = 3;
+                mic_delays[3] = 5;
+                mic_delays[4] = 8;
+                mic_delays[5] = 10;
+                mic_delays[6] = 11;
+                mic_delays[7] = 13;
+              end
+		  19 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 0;
+                mic_delays[2] = 4;
+                mic_delays[3] = 7;
+                mic_delays[4] = 8;
+                mic_delays[5] = 8;
+                mic_delays[6] = 11;
+                mic_delays[7] = 12;
+              end
+		  24 : begin
+                mic_delays[0] = 0;
+                mic_delays[1] = 4;
+                mic_delays[2] = 5;
+                mic_delays[3] = 5;
+                mic_delays[4] = 5;
+                mic_delays[5] = 6;
+                mic_delays[6] = 6;
+                mic_delays[7] = 6;
+              end
+		  29 : begin
+                mic_delays[0] = 1;
+                mic_delays[1] = 5;
+                mic_delays[2] = 7;
+                mic_delays[3] = 7;
+                mic_delays[4] = 9;
+                mic_delays[5] = 10;
+                mic_delays[6] = 12;
+                mic_delays[7] = 15;
+              end
 
 
 
