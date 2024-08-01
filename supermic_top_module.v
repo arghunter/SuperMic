@@ -5,7 +5,10 @@ module supermic_top_module(
     input wire [4:0] delay_select,
     input wire [3:0] pdm,
     output wire i2s_out,
-    output wire mic_clk
+    output wire mic_clk,
+	output wire [7:0] cic_out,
+
+	
 );
     wire [7:0] sdr_data;
     wire [18:0] cic_data [7:0];
@@ -27,12 +30,12 @@ module supermic_top_module(
         // 8 cic filters
         for (i=0;i<8;i=i+1) begin : cic_inst
             cic u_cic (
-            .clk(clk),
-            .lr_clk(lr_clk),
-            .i_reset(rst),
-            .i_data(sdr_data[i]),
-            .o_data(cic_data[i])
-            );         
+				.clk(clk),
+				.lr_clk(lr_clk),
+				.i_reset(rst),
+				.i_data(sdr_data[i]),
+				.o_data(cic_data[i])
+            );
         end
 
         // delays
@@ -82,7 +85,15 @@ module supermic_top_module(
             .bit_data({{10{sum_out[21]}}, sum_out}),
             .out(i2s_out)
         ); 
-
+		for (i=0;i<8;i=i+1) begin : i2s_bus_inst
+			i2s_bus c_i2s_bus (
+				.clk(clk),
+				.rst(rst),
+				.lr_clk(lr_clk),
+				.bit_data({{13{cic_data[i][18]}}, cic_data[i]}),
+				.out(cic_out[i])
+			);
+        end
     endgenerate
 
 assign mic_clk = lr_clk;
