@@ -63,6 +63,37 @@ module delay_module (
                 mic_delays[6] = 0;
                 mic_delays[7] = 0;
             end
+          1 : begin
+                mic_delays[0] = 1;
+                mic_delays[1] = 2;
+                mic_delays[2] = 3;
+                mic_delays[3] = 4;
+                mic_delays[4] = 5;
+                mic_delays[5] = 6;
+                mic_delays[6] = 7;
+                mic_delays[7] = 8;
+            end
+          2 : begin
+                mic_delays[0] = 2;
+                mic_delays[1] = 3;
+                mic_delays[2] = 4;
+                mic_delays[3] = 5;
+                mic_delays[4] = 6;
+                mic_delays[5] = 7;
+                mic_delays[6] = 8;
+                mic_delays[7] = 9;
+            end
+          3 : begin
+                mic_delays[0] = 3;
+                mic_delays[1] = 4;
+                mic_delays[2] = 5;
+                mic_delays[3] = 6;
+                mic_delays[4] = 7;
+                mic_delays[5] = 8;
+                mic_delays[6] = 9;
+                mic_delays[7] = 10;
+            end
+
     endcase
     end
 
