@@ -81,7 +81,7 @@ module delay_module (
                 mic_delays[6] = 8;
                 mic_delays[7] = 9;
             end
-<<<<<<< HEAD
+
           3 : begin
                 mic_delays[0] = 3;
                 mic_delays[1] = 4;
@@ -92,9 +92,7 @@ module delay_module (
                 mic_delays[6] = 9;
                 mic_delays[7] = 10;
               end
-=======
-          
->>>>>>> c719ff8b8c921d0f831a78273ee4634d06e61e7e
+
     endcase
     end
 
