@@ -24,14 +24,12 @@ module delay_module (
     wire [18:0] delayed_pcm_data [7:0];
     reg [4:0] mic_delays [7:0];  
 
-
     integer x;
     initial begin
       for (x = 0; x < 8; x = x + 1) begin
         mic_delays[x] = 0;
        end
     end
-
 
     assign pcm_data[0] = pcm_data_0;
     assign pcm_data[1] = pcm_data_1;
@@ -92,21 +90,20 @@ module delay_module (
                 mic_delays[5] = 8;
                 mic_delays[6] = 9;
                 mic_delays[7] = 10;
-            end
-
+              end
     endcase
     end
 
-    genvar i;
+    genvar j;
 
     generate
-      for (i = 0; i < 8; i = i + 1) begin : delay_line_gen
+      for (j = 0; j < 8; j = j + 1) begin : delay_line_gen
       delay_line u_delay_line (
         .clk(clk),
         .rst(rst),
-        .delay(mic_delays[i]),
-        .pcm_data(pcm_data[i]),
-        .delayed_pcm_data(delayed_pcm_data[i])
+        .delay(mic_delays[j]),
+        .pcm_data(pcm_data[j]),
+        .delayed_pcm_data(delayed_pcm_data[j])
       );
       end
     endgenerate

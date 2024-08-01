@@ -18,12 +18,14 @@ always @(posedge clk or posedge rst) begin
 			buffer[i] <= 0;
 		end
 	end else begin
-		buffer[counter] <= pcm_data;
-		counter <= ({1'b0, counter} + 6'b1) % ({1'b0, delay} + 6'b1);
+		for (i = 0; i < MAX_DELAY - 1; i = i + 1) begin
+			buffer[i + 1] <= buffer[i];
+                end
+                buffer[0] <= pcm_data;
 	end
 end
 
-assign delayed_pcm_data = buffer[({1'b0, counter} + 6'b1) % ({1'b0, delay} + 6'b1)];
+assign delayed_pcm_data = buffer[delay];
 
 endmodule
 
