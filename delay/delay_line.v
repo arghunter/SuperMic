@@ -1,14 +1,14 @@
 module delay_line (
 	input wire clk,
 	input wire rst,
-        input wire [4:0] delay,
+        input wire [3:0] delay,
 	input wire [18:0] pcm_data,
 	output wire [18:0] delayed_pcm_data
 );
 
-parameter MAX_DELAY = 32;
+parameter MAX_DELAY = 16;
 integer i;
-reg [4:0] counter = 0;
+reg [3:0] counter = 0;
 reg [18:0] buffer [MAX_DELAY:0];
 
 always @(posedge clk or posedge rst) begin
@@ -26,4 +26,3 @@ end
 assign delayed_pcm_data = buffer[({1'b0, counter} + 6'b1) % ({1'b0, delay} + 6'b1)];
 
 endmodule
-
