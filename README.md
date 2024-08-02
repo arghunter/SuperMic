@@ -10,8 +10,8 @@ To get started with this project, clone the repository to your local machine:
 
 Ensure you have a suitable Verilog simulation environment set up, such as VScode, to compile and simulate the Verilog code.
 
-git clone ... ************************************************************
-cd ****************************************************
+git clone ... https://github.com/arghunter/SuperMic.git
+cd ./SuperMic/
 
 To convert verilog files to stl files for implementation on an ASIC chip, consider using openlane2.
 
@@ -22,7 +22,7 @@ The input signal is converted from double data rate to single data rate.
 The SDR signal is then passed through a CIC filter to decimate the signal from 3.072 Mhz to 48Khz.
 #### Delay Line
 The decimated signal is then passed though a set of circular buffer delays.
-There are ... predefined delay configurations based on microphone position. ********************************
+There are 32 predefined delay configurations based on microphone position.
 #### 23 bit Binary Adder
 The signal is then passed through a 23 bit binary adder.
 #### I2S Bus
