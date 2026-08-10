@@ -1,3 +1,5 @@
+
+
 # SuperMic
 ## Beamforming Microphone - Verilog Implementation
 Welcome to the SuperMic repository. This project contains the Verilog implementation of a beamforming microphone system along with several essential components that make up the system.
@@ -10,7 +12,7 @@ To get started with this project, clone the repository to your local machine:
 
 Ensure you have a suitable Verilog simulation environment set up, such as VScode, to compile and simulate the Verilog code.
 
-git clone ... https://github.com/arghunter/SuperMic.git
+git clone https://github.com/arghunter/SuperMic.git
 cd ./SuperMic/
 
 To convert verilog files to stl files for implementation on an ASIC chip, consider using openlane2.
